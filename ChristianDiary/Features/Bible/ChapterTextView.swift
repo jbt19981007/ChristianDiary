@@ -82,6 +82,7 @@ struct ChapterTextView: View {
 }
 
 /// 把选中的经文整理成「出处 + 经文」。
+@MainActor
 struct VerseSelection {
     let location: ChapterLocation
     let verses: [Int]
