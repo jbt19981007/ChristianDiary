@@ -121,9 +121,11 @@ struct NoteDetailView: View {
         isDeleting = true
         dismiss()
         let target = note
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            context.delete(target)
-            try? context.save()
+        let modelContext = self.context
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(400))
+            modelContext.delete(target)
+            try? modelContext.save()
         }
     }
 }
