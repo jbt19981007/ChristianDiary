@@ -1,0 +1,37 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Core tests & app build
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Test DevotionCore package
+        run: swift test --package-path Packages/DevotionCore
+
+      - name: Build app and widget (iOS Simulator)
+        run: |
+          xcodebuild build \
+            -project ChristianDiary.xcodeproj \
+            -scheme ChristianDiary \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            -quiet

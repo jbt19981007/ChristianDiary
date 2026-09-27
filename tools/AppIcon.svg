@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C99660"/>
+      <stop offset="1" stop-color="#7A4823"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="512" cy="300" r="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFEBC7" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFEBC7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pageL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#EEDCBE"/>
+    </linearGradient>
+    <linearGradient id="pageR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E7D1AE"/>
+      <stop offset="1" stop-color="#FFF9EF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+  <g stroke="#FFF6E6" stroke-width="46" stroke-linecap="round">
+    <line x1="512" y1="160" x2="512" y2="455"/>
+    <line x1="418" y1="258" x2="606" y2="258"/>
+  </g>
+  <path d="M506 575 C 426 522, 318 506, 196 530 L 196 812 C 318 788, 426 804, 506 858 Z" fill="url(#pageL)"/>
+  <path d="M518 575 C 598 522, 706 506, 828 530 L 828 812 C 706 788, 598 804, 518 858 Z" fill="url(#pageR)"/>
+  <g stroke="#C9A77A" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M258 604 C 330 592, 398 600, 452 628"/>
+    <path d="M258 668 C 330 656, 398 664, 452 692"/>
+    <path d="M258 732 C 330 720, 398 728, 452 756"/>
+    <path d="M766 604 C 694 592, 626 600, 572 628"/>
+    <path d="M766 668 C 694 656, 626 664, 572 692"/>
+    <path d="M766 732 C 694 720, 626 728, 572 756"/>
+  </g>
+</svg>
